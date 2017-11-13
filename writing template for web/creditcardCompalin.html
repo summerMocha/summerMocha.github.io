@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Blog Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="blog.css" rel="stylesheet">
+    <link href =skeleton.css rel="stylesheet">
+
+
+
+
+    <link rel="icon" type="image/png" href="images/thumbnail-41403.jpg">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+
+<div class="hero">
+    <img src="images/thumbnail-41403.jpg" style="width:100%" />
+
+</div>
+
+
+
+<div class="container">
+
+    <div class="blog-header">
+        <h1 class="blog-title">How to collect data and create graphs in Tableau</h1>
+        <p class="lead blog-description">This tutorial will teach how to do simple data analyze step by step by spreedsheet and create a simple bar chart with Tableau </p>
+
+    <div class="row">
+
+        <div class="col-sm-12 blog-main">
+
+            <div class="blog-post">
+                <p class="blog-post-meta">January 1, 2016 by <a href="#">Wei Tang</a></p>
+                <P>When looking at data regarding complaints made to the Consumer Financial Protection Bureau obtained from data.gov, we observed a significant amount of complaints made regarding credit reports, and decided to look at complaints filed against 3 companies in particular; Experian, Equifax, and Transunion.
+                </P>
+               <p>
+                   We chose to look at these companies, as they handle the vast majority of credit reports in the United States, and are increasingly notorious for consistently making mistakes that can cost people loans, apartments, or even jobs.
+
+               </p>
+
+                <P>
+                    Recent studies have found that 25% of people have errors in their credit reports, and 5% of people have errors serious enough to cause them to be denied a loan or worse. Mistakes can include having debt on your report that has already been paid or isn’t yours.
+                </P>
+                <p>People’s identities have been mixed up and never fixed for years. There have even been instances of credit reports indicating a criminal record that doesn’t belong to them.
+
+                </P>
+                <p>
+                    The first chart shows that the majority of complaints made to the Consumer Financial Protection Bureau towards these companies are about incorrect information on credit reports, or adjacent issues.
+
+                </p>
+
+                <P>
+                    The second shows the trend of how many complaints have been filed since October 2012 when the CFPB began taking them. Both indicate that a great number of people in Massachusetts are becoming aware of the potential errors that plague their credit reports.
+
+                </P>
+                <p>
+                    Whether this is due to rising awareness of the issue, or of the fact that CFPB accepts complaint about them is unclear. But this data doesn’t provide confidence in these credit bureaus’ claims that they are improving their systems.
+
+                </p>
+                <h3>Step1:</h3>
+                <p>We went to data.gov, clicked on datasets, and clicked on Consumer Complaint Database. Downloaded raw data from <a href="https://catalog.data.gov/dataset/consumer-complaint-database"Data Catalogue></a> using Excel.
+                </p>
+                <h3>Step two:</h3>
+                <p> Save original data and copied/pasted data into google drive.
+                </p>
+                <h3> Step three:</h3>
+                <P>
+                We looked through the data to find patterns and get an understanding of it. Credit reporting seemed to be a good topic to focus on because everyone gets credit reports and there were a massive amount of complaints for this area, in particular. Credit reports are important and how each person’s information is recorded can have a huge impact on their ability to apply for loans, buy a house, get a credit card, etc.
+                </P>
+
+                <h3>
+                    Step four:
+                </h3>
+                <p>
+
+                    Clean data and filter
+                    Delete columns for
+                    <ul>Complaint ID’s</ul>
+                    <ul>Company response to consumer</ul>
+                    <ul>Solution data</ul>
+                    <ul>Timely response</ul>
+                    <ul>Submitted via web or phone or fax</ul>
+                    <ul>Zip code</ul>
+                    <ul>Tags</ul>
+                    <ul>And other unnecessary data</ul>
+
+                </p>
+
+                <h3>
+                    Step five:
+
+                </h3>
+
+                <p>
+                   Sort through and analyze necessary data:
+                   <h3>Step five:</h3>
+                <ol>
+                <li>	Top three credit bureau companies with the most complaints: Equifax, Experian, Transunion Intermediate Holdings, Inc.</li>
+                <li>	Date of complaints</li>
+                <li>	Date the complaint was “fixed”</li>
+                <li>	General Issue (Credit reporting)</li>
+                <li>Type of issue (identity theft, incorrect information on credit report, etc.)</li>
+                </ol>
+                </p>
+                <p>
+                    We imported data in Tableau and from there, we were able to create different graphs by manipulating the categories and dragging to rows or columns.
+
+                </p>
+
+                <h3>
+                    Step six:
+                </h3>
+                <p>  Created graphs in Tableau
+
+               <p>
+                <img class="img-left"  src=" images/credit1.png" width="800" height="600"/>
+                First Graph
+                Shows the total credit report complaints in MA from 2013-2016.We only had data from October to December for 2012. We decided to delete this from our dataset. This chart shows which type of complaints happened the most frequently.
+               </p>
+                <ol>
+                To create graph:
+                </ol>
+                <li>
+                Click and drag “type of complaint” into columns.
+                </li>
+                <li>
+                Click and drag “company” + “complaint” into rows
+                </li>
+
+
+                <p>
+                    <img class="img-left"  src=" images/credit2.png" width="800" height="600"/>
+                    	Second Graph:
+
+                <p>Shows the frequency and increase in complaints for each quarter for each company.
+                </p>
+
+                    <ol>To create graph:
+                        <li>Click and drag “date issued” into columns.</li>
+                        <li> Click on “date issued”, drop menu will appear and click quarters.</li>
+                        <li>Click and drag “company” into rows.</li>
+                        <li> Then click on company, drop menu will appear, click count.</li>
+                    </ol>
+
+
+                </p>
+
+
+
+</div>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="../../dist/js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>

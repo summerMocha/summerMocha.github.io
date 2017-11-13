@@ -1,0 +1,165 @@
+.title_part {
+	height: 800px;
+	background-image: url('../image/background22.jpg');
+	width: 100%;
+}
+
+.header_row {
+	width: 90%;
+	max-width: 1020px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.header_title {
+	font-family: 'Vollkorn', serif;
+	font: 80px "Open Sans", sans-serif,bold;
+	color: #ffffff;
+
+
+
+}
+
+.header_sub {
+	font-family: 'Vollkorn', serif;
+	font: 35px/1.9em "Open Sans", sans-serif;
+	color: white;
+}
+
+.nav_bar {
+	font-family: 'Vollkorn', serif;
+	font: 22px "Open Sans", sans-serif;
+	width: 100%;
+	margin: 0 auto;
+	left: 0;
+	top: 0;
+	position: fixed;
+	z-index: 2;
+}
+
+.nav_ul {
+	font-family: 'Vollkorn', serif;
+	text-align: center;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.2);
+	z-index: 2;
+}
+
+.nav_li {
+	font-family: 'Vollkorn', serif;
+	display: inline-block;
+	padding: 10px 20px;
+}
+
+.nav_a {
+	font-family: 'Vollkorn', serif;
+	color: rgb(255, 255, 255);
+}
+
+a {
+	font-family: 'Vollkorn', serif;
+	text-decoration: none !important;
+}
+
+.social_media {
+	height: 50px;
+	margin: 20px 0;
+	font-size: 35px;
+	text-align: center;
+
+	}
+
+.social_link {
+	display: inline-block;
+	margin: 0 20px;
+	color: black;
+}
+
+.contact_detail {
+	display: block;
+}
+
+.about_me {
+	margin: 20px auto;
+}
+
+.self_image {
+
+	margin: 0 auto;
+	border-radius: 100%;
+	width: 150px;
+	height: 150px;
+	/*opacity: 0.5;*/
+	/*filter: alpha(opacity=50);*/
+
+}
+
+.project_description {
+	font-family: 'Vollkorn', serif;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	padding: 0 10px;
+	position: absolute;
+	transition: opacity 1s ease 0s;
+}
+
+.project_description:hover {
+
+	opacity: 1;
+	background-color: rgba(255, 255, 255, .80);
+}
+
+.margin_auto {
+	margin: 0 auto;
+}
+
+.display_block {
+	display: block;
+}
+
+.chart {
+	position: relative;
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+	margin: 20px 30px;
+	text-align: center;
+}
+
+.percentage {
+	line-height: 100px;
+}
+
+canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.hr_border {
+	border: 1px;
+	border-top: 1px solid #eee;
+}
+.col-xs-8 {
+	font-size:25px;
+}
+
+.img-same-height {
+	width: 400px;
+	height: 200px;
+}
+i{
+	background-color: lightblue;
+}
+.header_sub{
+	font-weight: 300;
+	font-family: Helvetica;
+	color: white;
+
+
+}
+.href{
+ 	color:#1EAEDB;
+	font-weight: 400;
+}
