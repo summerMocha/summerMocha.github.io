@@ -1,0 +1,16 @@
+
+circle {
+    fill: transparent;
+    stroke: pink;
+    stroke-width: 5px;
+}
+
+
+#NYT{
+    padding-left:400px;
+}
+.col-md-3{
+    font-size:30px;
+    font-family: SansSerif;
+    font-weight: 500;
+}
