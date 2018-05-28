@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+var xAxisData = [];
+var data1=[];
+//
+//data1.push(
+//{"COMMONWEALTH AVE":366},
+//{"WASHINGTON ST":160},
+//{"HARRISON AVE":107},
+//{"COLUMBUS AVE":103},
+//{"BEACON ST":97},
+//{"MASSACHUSETTS AVE":90},
+//{"TREMONT ST":87},
+//{"CENTRE ST":82},
+//{"MOUNT VERNON ST":82},
+//{"DORCHESTER AVE":74},
+//{"MARLBOROUGH ST":74},
+//{"NEWBURY ST":	69},
+//{"COLUMBIA RD":	53},
+//{"BOYLSTON ST":	51},
+//{"STRATHMORE RD":49},
+//{"CHARLES ST":48},
+//{"CHESTNUT ST":	48}
+//);
+data1.push(366,160,107,103,97,90,87,82,82,74,74,69,53,51,49,48,48);
+xAxisData.push('COMMONWEALTH AVE', 'WASHINGTON ST','HARRISON AVE', 'COLUMBUS AVE', 'BEACON ST', 'MASSACHUSETTS AVE', 'TREMONT ST', 'CENTRE ST',
+'MOUNT VERNON ST','DORCHESTER AVE', 'MARLBOROUGH ST', 'NEWBURY ST', 'COLUMBIA RD', 'BOYLSTON ST', 'STRATHMORE RD', 'CHARLES ST', 'CHESTNUT ST');
+
+option = {
+    title: {
+        text: 'where we get towed'
+    },
+    legend: {
+        data: [ ''],
+        align: 'left'
+    },
+    toolbox: {
+        // y: 'bottom',
+        feature: {
+            magicType: {
+                type: ['stack', 'tiled']
+            },
+            dataView: {},
+            saveAsImage: {
+                pixelRatio: 2
+            }
+        }
+    },
+    tooltip: {},
+    xAxis: {
+        data: xAxisData,
+        silent: false,
+        splitLine: {
+            show: false
+        }
+    },
+    yAxis: {
+    },
+    series: [ {
+        name: 'bar',
+        type: 'bar',
+        data: data1,
+        animationDelay: function (idx) {
+            return idx * 100 + 500;
+        }
+    }],
+    animationEasing: 'elasticOut',
+    animationDelayUpdate: function (idx) {
+        return idx * 2;
+    }
+};
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>
