@@ -7,18 +7,18 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <!--<link rel="icon" href="../../favicon.ico">-->
 
-    <title>Jumbotron Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="../../dist/css/bootstrap.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="jumbotron.css" rel="stylesheet">
+    <link href="jumbotron-narrow.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -33,74 +33,127 @@
 
   <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
-          </form>
-        </div><!--/.navbar-collapse -->
-      </div>
-    </nav>
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-center">
+            <li role="presentation" class="active .col-md-3"><a href="#">What time we get towed</a></li>
+            <li role="presentation" class=".col-md-3"><a href="https://htmlpreview.github.io/?https://github.com/summerMocha/summerMocha.github.io/blob/master/index.html">Where we get towed (map)</a></li>
+            <li role="presentation" class=".col-md-3"> <a href="https://htmlpreview.github.io/?https://rawgit.com/summerMocha/summerMocha.github.io/master/strret-towed.html">Where we get towed</a></li>
+            <li role="presentation"  class=".col-md-3"> <a href="https://htmlpreview.github.io/?https://github.com/summerMocha/summerMocha.github.io/blob/master/towed%20bar%20chart.html">What day of week are likely to be towed</a></li>
+            <li role="presentation" class=".col-md-3"><a href="https://cdn.rawgit.com/summerMocha/summerMocha.github.io/9cf3e8bd/why-towed.html">Why we get towed</a></li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <div class="container-fluid">
+        <h1>Mapping Boston’s worst towing spots</h1>
+        <p class="lead">Towing companies aggressively patrol certain locations in Boston, with little government oversight.
+          A look at where, why and when more than 8211vehicles were towed between June 2015 and November2017. More than 90,000 cars are towed away in Boston each year. We find the hot spots
+          for losing your wheels.
+        </p>
       </div>
     </div>
 
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
+        <div id="container1" class="container-fluids" style="height:500px">
+          <!--<div id="container" style="height: 100%"></div>-->
+          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+          <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+          <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script><script type="text/javascript">
+            var dom = document.getElementById("container1");
+            var myChart = echarts.init(dom);
+            var app = {};
+            option = null;
+            app.title = '折柱混合';
+
+            option = {
+              tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                  type: 'cross',
+                  crossStyle: {
+                    color: '#999'
+                  }
+                }
+              },
+              toolbox: {
+                feature: {
+                  dataView: {show: true, readOnly: false},
+                  magicType: {show: true, type: ['line', 'bar']},
+                  restore: {show: true},
+                  saveAsImage: {show: true}
+                }
+              },
+              legend: {
+                data:['蒸发量','平均温度']
+              },
+              xAxis: [
+                {
+                  type: 'category',
+                  data: ['0am','2am','4am','6am','8am','10am','12pm','2pm','4pm','6pm','8pm','10pm'],
+                  axisPointer: {
+                    type: 'shadow'
+                  }
+                }
+              ],
+              yAxis: [
+                {
+                  type: 'value',
+                  name: 'When we get towed',
+                  min: 0,
+                  max: 1200,
+                  interval: 200,
+                  axisLabel: {
+                    formatter: '{value}'
+                  }
+                },
+                {
+                  type: 'value',
+                  name: '',
+                  min: 0,
+                  max: 1200,
+                  interval: 200,
+                  axisLabel: {
+                    formatter: '{value}'
+                  }
+                }
+              ],
+              series: [
+                {
+                  name:'',
+                  type:'bar',
+                  data:[354, 121, 60, 211, 1065, 823, 383, 203, 252, 237, 230, 195]
+                },
+
+                {
+                  name:'',
+                  type:'line',
+                  yAxisIndex: 1,
+                  data:[354, 121, 60, 211, 1065, 823, 383, 203, 252, 237, 230, 195]
+                }
+              ]
+            };
+
+            if (option && typeof option === "object") {
+              myChart.setOption(option, true);
+            }
+          </script>
       </div>
 
-      <hr>
-
-      <footer>
-        <p>&copy; 2016 Company, Inc.</p>
-      </footer>
-    </div> <!-- /container -->
 
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+
+ <!-- /container -->
+
+
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
