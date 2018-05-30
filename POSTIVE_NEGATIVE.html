@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+app.title = '柱状图框选';
+
+var xAxisData = [];
+var data1 = [];
+var data2 = [];
+var data3 = [];
+
+
+
+    xAxisData.push("Buzzfeed","Washington Post","HuffingtonPost","NYtimes","NPR");
+    data1.push(17.5,20,17.5,15,15);
+//    data2.push(37,51,52.5,65,55);
+    data3.push(-46,-27.5,-29,-18,-27.5);
+
+
+
+var itemStyle = {
+    normal: {
+    },
+    emphasis: {
+        barBorderWidth: 1,
+        shadowBlur: 10,
+        shadowOffsetX: 0,
+        shadowOffsetY: 0,
+        shadowColor: 'rgba(0,0,0,0.5)'
+    }
+};
+
+option = {
+    backgroundColor: '#eee',
+    legend: {
+        data: ['Positive ', 'Neutral', 'Negative'],
+        align: 'left',
+        left: 10
+    },
+    brush: {
+        toolbox: ['rect', 'polygon', 'lineX', 'lineY', 'keep', 'clear'],
+        xAxisIndex: 0
+    },
+    toolbox: {
+        feature: {
+            magicType: {
+                type: ['stack', 'tiled']
+            },
+            dataView: {}
+        }
+    },
+    tooltip: {},
+    xAxis: {
+        data: xAxisData,
+        name: 'X Axis',
+        silent: false,
+        axisLine: {onZero: true},
+        splitLine: {show: false},
+        splitArea: {show: false}
+    },
+    yAxis: {
+        inverse: false,
+        splitArea: {show: false}
+    },
+    grid: {
+        left: 100
+    },
+    visualMap: {
+        type: 'continuous',
+        dimension: 1,
+        text: ['High Percentage', 'Low Percentage'],
+        inverse: true,
+        itemHeight: 200,
+        calculable: true,
+//        min: -50,
+//        max: 20,
+        top: 60,
+        left: 10,
+        inRange: {
+            colorLightness: [0.4, 0.8]
+        },
+        outOfRange: {
+            color: '#bbb'
+        },
+        controller: {
+            inRange: {
+                color: '#2f4554'
+            }
+        }
+    },
+    series: [
+        {
+            name: 'Positive',
+            type: 'bar',
+            stack: 'one',
+            itemStyle: itemStyle,
+            data: data1
+        },
+//        {
+//            name: 'Neutral',
+//            type: 'bar',
+//            stack: 'one',
+//            itemStyle: itemStyle,
+//            data: data2
+//        },
+        {
+            name: 'Negative',
+            type: 'bar',
+            stack: 'two',
+            itemStyle: itemStyle,
+            data: data3
+        }
+    ]
+};
+
+myChart.on('brushSelected', renderBrushed);
+
+function renderBrushed(params) {
+    var brushed = [];
+    var brushComponent = params.batch[0];
+
+    for (var sIdx = 0; sIdx < brushComponent.selected.length; sIdx++) {
+        var rawIndices = brushComponent.selected[sIdx].dataIndex;
+        brushed.push('[Series ' + sIdx + '] ' + rawIndices.join(', '));
+    }
+
+    myChart.setOption({
+        title: {
+            backgroundColor: '#333',
+            text: 'SELECTED DATA INDICES: \n' + brushed.join('\n'),
+            bottom: 0,
+            right: 0,
+            width: 100,
+            textStyle: {
+                fontSize: 12,
+                color: '#fff'
+            }
+        }
+    });
+};
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>
