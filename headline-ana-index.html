@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+       <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+       <!--[if lt IE 9]>
+       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+       <![endif]-->
+   </head>
+   <body style="height: 100%; margin: 0">
+
+   <div class="container">
+
+
+       <div class="container-fluid">
+               <h2>Headline analysis using TextBlob and NLTK:</h2>
+           <p class="lead">An exploration 10,000 news articles collected between November 2016 and May 2017 from the top-500 news publishers.
+               Data analysis always begins with questions.I was working with a dataset of 10,000 stories from the top-500 news publishers in the U.S. Before I could determine what to filter out for analysis,
+               I had to define my questions.</p>
+       </div>
+
+       <div class="header clearfix">
+           <nav>
+               <ul class="nav nav-pills pull-center">
+                   <li role="presentation" class=".col-md-3"><a href="https://cdn.rawgit.com/summerMocha/summerMocha.github.io/6d678d84/Sentiment-ana-without-LABEL.html">Sentiment Analysis among Headline</a></li>
+                   <li role="presentation" class="active .col-md-3"><a href="#">Which Publisher sent out the most articles </a></li>
+                   <li role="presentation" class=".col-md-3"><a href="https://cdn.rawgit.com/summerMocha/summerMocha.github.io/36fde9cb/pie.html">What are the top keywords</a></li>
+                   <li role="presentation" class=".col-md-3"> <a href="https://htmlpreview.github.io/?https://rawgit.com/summerMocha/summerMocha.github.io/master/strret-towed.html">Proportion of Positive VS Negative news</a></li>
+                   <li role="presentation"  class=".col-md-3"> <a href="https://htmlpreview.github.io/?https://github.com/summerMocha/summerMocha.github.io/blob/master/towed%20bar%20chart.html">What day of week are likely to be towed</a></li>
+
+               </ul>
+           </nav>
+
+       </div>
+   </div>
+
+       <div id="container" class="container-fluid"  style="height: 400px"></div>
+        <!-- Custom styles for this template -->
+        <link href="jumbotron-narrow.css" rel="stylesheet">
+          <!-- Latest compiled and minified CSS -->
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+var option = {
+    dataset: {
+        source: [
+            ['score', 'amount', 'product'],
+            [595, 595, ' buzzfeed.com'],
+            [591, 591, 'washingtonpost.com'],
+            [583, 583, 'huffingtonpost.com'],
+            [422, 422, 'nytimes.com'],
+            [404, 404, 'npr.org'],
+            [392, 392, 'cnn.com'],
+            [344, 344, 'theguardian.com'],
+            [308, 308, 'usatoday.com'],
+            [307, 307, 'thehill.com'],
+            [307, 307, 'bbc.co.uk']
+        ]
+    },
+
+    grid: {containLabel: true},
+    xAxis: {name: 'amount'},
+    yAxis: {type: 'category'},
+    visualMap: {
+        orient: 'horizontal',
+        left: 'center',
+        min: 307,
+        max: 597,
+        text: ['High', 'Low'],
+        // Map the score column to color
+        dimension: 0,
+        inRange: {
+            color: ['#D7DA8B', '#E15457']
+        }
+    },
+    series: [
+        {
+            type: 'bar',
+            encode: {
+                // Map the "amount" column to X axis.
+                x: 'amount',
+                // Map the "product" column to Y axis
+                y: 'product'
+            }
+        }
+    ]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>
