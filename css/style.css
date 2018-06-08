@@ -14,7 +14,7 @@
 .header_title {
 	font-family: 'Vollkorn', serif;
 	font: 80px "Open Sans", sans-serif,bold;
-	color: #ffffff;
+	color: white;
 
 
 
@@ -86,11 +86,9 @@ a {
 .self_image {
 
 	margin: 0 auto;
-	border-radius: 100%;
+	border-radius: 80%;
 	width: 150px;
 	height: 150px;
-	/*opacity: 0.5;*/
-	/*filter: alpha(opacity=50);*/
 
 }
 
@@ -153,11 +151,18 @@ i{
 	background-color: lightblue;
 }
 .header_sub{
-	font-weight: 300;
+	font-weight: 200;
+	font-size:150%;
 	font-family: Helvetica;
-	color: white;
+	color: black;
 
 
+}
+.me{
+	font-weight: 100;
+	font-size:100%;
+	font-family: Helvetica;
+	color: black;
 }
 .href{
  	color:#1EAEDB;
